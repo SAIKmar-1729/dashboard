@@ -175,6 +175,7 @@ function App() {
             />
           </div>
           <div className='header-column'>Name</div>
+          <div className='header-column'>Email</div>
           <div className='header-column'>Role</div>
           <div className='header-column'>Action</div>
         </div>
@@ -186,6 +187,7 @@ function App() {
             {editMode === item.id ? (
               <>
                 <input type="text" id={`name-${item.id}`} defaultValue={item.name} className="row-column" />
+                <input type="text" id={`role-${item.id}`} defaultValue={item.email} className="row-column" />
                 <input type="text" id={`role-${item.id}`} defaultValue={item.role} className="row-column" />
                 <div className="row-column">
                   <button className="btn" onClick={() => handleSaveClick(item.id)} style={{ "backgroundColor": "#42f557" }}><CheckOutlinedIcon /></button>
@@ -195,6 +197,7 @@ function App() {
             ) : (
               <>
                 <div className="row-column">{item.name}</div>
+                <div className="row-column">{item.email}</div>
                 <div className="row-column">{item.role}</div>
                 <div className="row-column">
                   <button className="btn" onClick={() => handleEditClick(item.id)} style={{ "backgroundColor": "white" }}><EditNoteIcon /></button>
